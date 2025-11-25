@@ -1,0 +1,262 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/*Layouts*/
+
+/*12 Span Grid*/
+.layout{
+  border: 2px solid green;
+  display: grid;
+  grid:
+    "span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 span12" 1fr
+    "span6 span6 span6 span6 span6 span6 . . . . . ." 1fr 
+    ". . . . . span3 span3 span3 . . . ." 1fr
+    ". . . . span1 . . . . . . . " 1fr 
+    / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+.span12 {grid-area: span12; background-color: gray;}
+.span6 {grid-area: span6; background-color: gray;}
+.span3 {grid-area: span3; background-color: gray;}
+.span1 {grid-area: span1; background-color: gray;}
+
+/*3x3 Grid*/
+.layout2{
+  width:90%;
+  height: 300px;
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(3,1fr);
+  gap: 8px;
+  border:2px solid pink;
+}
+
+/*Holy Grail*/
+.layout3{
+  border:2px solid yellow;
+  width: 99%;
+  height: 300px;
+  display: grid;
+  grid:
+    "header header header" auto 
+  "leftSide body rightSide" 1fr
+  "footer footer footer" auto 
+  / auto 1fr auto;
+  gap: 8px;
+}
+.header{grid-area: header;background-color: #333355;}
+.leftSide{grid-area: leftSide; background-color: #335533;}
+.body{grid-area: body; background-color: #553355;}
+.rightSide{grid-area: rightSide; background-color: #335533;}
+.footer{grid-area: footer; background-color:#333355;}
+
+/*Sidebar*/
+.layout4{
+  width: 99%;
+  height:300px;
+  display: grid;
+  grid: 
+    "sidebar body1" 1fr 
+  / auto 1fr;
+  gap: 8px;
+}
+.sidebar{grid-area: sidebar; background-color: coral;}
+.body1{grid-area: body1; background-color: violet;}
+
+/*Header-Main-Footer*/
+.layout5{
+  border: 2px purple solid;
+  width: 99%;
+  height: 300px;
+  display: grid;
+  grid:
+    "header1" auto 
+  "main" 1fr 
+  "footer1" auto 
+  /1fr; 
+  gap: 8px;
+}
+.header1{grid-area: header1; background-color: #333355;}
+.main{grid-area: main; background-color: #335533;}
+.footer1{grid-area: footer1; background-color:#333355;}
+
+/*Infinite Rows*/
+.layout6{
+  border: 2px blue solid;
+  width: 99%;
+  height: 300px;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;  
+}
+
+/*Infinite Rows With Areas*/
+.layout7{
+  border: 2px red solid;
+  width: 99%;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;  
+}
+.col1Last1{
+  grid-column: 1 / -1;
+  background-color: #f75fb0
+}
+
+/*Flexbox Rows*/ 
+.layout8{
+  border: 2px solid purple;
+  display: flex;
+  gap: 16px;
+}
+.flRow{
+  border: 1px solid #f75fb0;
+  background-color: #f75fb0;
+}
+
+/*Flexbox Row Wrap*/ 
+.layout9{
+  border: 2px solid blue;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/*Flexbox Fitting the Space*/ 
+.layout10{
+  border: 2px solid green;
+  display: flex;
+  gap: 16px;
+}
+.grow1{
+  flex-grow: 1;
+  background-color: #af82f2;
+  border: 1px solid #8a43f4;
+}
+
+/*Flexbox Fit to Remaining Space*/ 
+.layout11{
+  border: 2px solid red;
+  display: flex;
+  gap: 16px;
+}
+
+/*Flexbox Separate*/ 
+.layout12{
+  border: 2px solid #fd983a;
+  display: flex;
+  gap: 16px;
+}
+.marginLeft{
+  margin-left: auto;
+  background-color: #f75fb0;
+  border: 1px solid #8a43f4;
+}
+
+/*CREATE YOUR OWN: Supreme Syeda*/
+.layout13{
+  border: 2px solid #f75fb0;
+  width: 99%;
+  height: 300px;
+  display: flex;
+  gap: 8px;
+}
+.sector{
+  background-color: #b276ea;
+  border: 1px solid #8a43f4;
+  width: 35%;
+}
+
+/*Animations*/
+
+/*background and border of div*/ 
+.bg{
+  width: 300px;
+  height: 100px;
+  background-color: #f75fb0;
+  border: 1px solid #8a43f4;
+}
+/*the translate() method*/
+.translate{
+  width:300px;
+  height:100px;
+  background-color: #f75fb0;
+  border:1px solid #553355;
+  transform: translate(10px, 10px);
+}
+
+/*the rotate() method*/
+.rotate{
+  width:300px;
+  height: 100px;
+  background-color:#af82f2;
+  border: 1px solid #8a43f4;
+}
+#myDiv{
+  transform:rotate(20deg);
+}
+
+/*the scale() method*/
+.scale{
+  width:300px;
+  height:100px;
+  background-color: #f75fb0;
+  border:1px solid #553355;
+  margin: 150px;
+  transform: scale (2,3);
+}
+
+/*the scaleX() method*/ 
+.scaleX{
+  width:300px;
+  height:100px;
+  background-color: #af82f2;
+  border:1px solid #553355;
+  margin: 150px;
+  transform: scaleX(2);
+}
+
+/*the scaleY() method*/
+.scaleY{
+  width:300px;
+  height:100px;
+  background-color: #f75fb0;
+  border:1px solid #553355;
+  margin: 150px;
+  transform: scaleY(2);
+}
+
+/*the skew, skewX(), and skewY() method*/ 
+.skew{
+  width:300px;
+  height:100px;
+  background-color: #af82f2;
+  border:1px solid #553355;
+  transform: skew(10deg, 10deg);
+}
+.skewX{
+  width:300px;
+  height:100px;
+  background-color: #f75fb0;
+  border:1px solid #553355;
+  transform: skewX(10deg);
+}
+.skewY{
+  width:300px;
+  height:100px;
+  background-color: #af82f2;
+  border:1px solid #553355;
+  transform: skewY(10deg);
+}
+
+/*the matrix() method*/
+.matrix1{
+  tranform: matrix(1,-0.3,0, 1, 0, 0)
+}
+.matrix2{
+  transform: matrix(1, 0, 0.5, 1, 150)
+}
